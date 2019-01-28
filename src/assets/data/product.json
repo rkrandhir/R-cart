@@ -1,0 +1,244 @@
+{"category":
+    [
+        {
+        "family" : "Men's Shirts & Tops",
+        "productItems" : [
+            {
+                "id"    : 1,
+                "name"  : "Round neck sporty T-shirt",
+                "price" : "100",
+                "rating": 5,                 
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img"   : "/assets/images/products/men/1.jpg"
+            },
+            {
+                "id"    : 2,
+                "name" : "Nike Men's Legend 2.0 T-Shirt",
+                "price": "50",
+                "rating": 5,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/2.jpg"
+            },
+            {
+                "id"    : 3,
+                "name" : "Under Armour Men's Performance 2.0 Golf Polo",
+                "price": "200",
+                "rating": 1,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/3.jpg"
+            },
+            {
+                "id"    : 4,
+                "name" : "Slazenger Men's Tech Solid Golf Polo",
+                "price": "953.45123421",
+                "rating": 2,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/4.jpg"
+            },
+
+            {
+                "id"    : 5,
+                "name" : "Under Armour Men's Performance 2.0 Golf Polo",
+                "price": "789.413223",
+                "rating": 3,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/5.jpg"
+            },
+            {
+                "id"    : 6,
+                "name" : "Nike Men's Legend 2.0 T-Shirt",
+                "price": "908",
+                "rating": 4,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/6.jpg"
+            },
+            {
+                "id"    : 7,
+                "name" : "Nike Men's Dri-FIT Icon Color Block Golf Polo",
+                "price": "1102",
+                "rating": 5,
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/7.jpg"
+            },
+            {
+                "id"    : 8,
+                "name" : "Nike Men's Legend 2.0 T-Shirt",
+                "price": "742",
+                "rating": 4,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/8.jpg"
+            },
+            {
+                "id"    : 9,
+                "name" : "Under Armour Men's Performance 2.0 Golf Polo",
+                "price": "2232",
+                "rating": 5,
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/9.jpg"
+            },
+            {
+                "id"    : 10,
+                "name" : "Slazenger Men's Tech Solid Golf Polo",
+                "price": "1299",
+                "rating": 3,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/10.jpg"
+            },
+            {
+                "id"    : 11,
+                "name" : "Under Armour Men's Performance 2.0 Golf Polo",
+                "price": "909",
+                "rating": 4,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/men/11.jpg"
+            }
+        ]
+    },
+    {
+        "family" : "Women's Apparels",
+        "productItems" : [
+            {
+                "id"    : 12,
+                "name" : "Round neck sporty T-shirt",
+                "price": "999.565",
+                "rating": 5,
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/1.jpg"
+            },
+            {
+                "id"    : 13,
+                "name" : "Nike Men's Legend 2.0 T-Shirt",
+                "price": "459",
+                "rating": 5,
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/2.jpg"
+            },
+            {
+                "id"    : 14,
+                "name" : "Under Armour women's Performance 2.0 Golf Polo",
+                "price": "923.42342134",
+                "rating": 1,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/3.jpg"
+            },
+            {
+                "id"    : 15,
+                "name" : "Slazenger Men's Tech Solid Golf Polo",
+                "price": "953.45123421",
+                "rating": 2,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/4.jpg"
+            },
+            {
+                "id"    : 16,
+                "name" : "Under Armour Men's Performance 2.0 Golf Polo",
+                "price": "789.413223",
+                "rating": 3,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/5.jpg"
+            },
+           {
+            "id"    : 17,
+                "name" : "Nike Men's Legend 2.0 T-Shirt",
+                "price": "459",
+                "rating": 5,
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/6.jpg"
+            },
+            {
+                "id"    : 18,
+                "name" : "Under Armour women's Performance 2.0 Golf Polo",
+                "price": "923.42342134",
+                "rating": 1,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/7.jpg"
+            },
+            {
+                "id"    : 19,
+                "name" : "Slazenger Men's Tech Solid Golf Polo",
+                "price": "953.45123421",
+                "rating": 2,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/8.jpg"
+            },
+            {
+                "id"    : 20,
+                "name" : "Under Armour Men's Performance 2.0 Golf Polo",
+                "price": "789.413223",
+                "rating": 3,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/women/9.jpg"
+            }
+        ]
+    },
+    {
+        "family" : "Kid's World",
+        "productItems" : [
+            {
+                "id"    : 21,
+                "name" : "Round neck sporty T-shirt",
+                "price": "999.565",
+                "rating": 5,
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/kids/1.jpg"
+            },
+            {
+                "id"    : 22,
+                "name" : "Nike Men's Legend 2.0 T-Shirt",
+                "price": "459",
+                "rating": 5,
+                "qty"   : 1,                 
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/kids/2.jpg"
+            },
+            {
+                "id"    : 23,
+                "name" : "Under Armour women's Performance 2.0 Golf Polo",
+                "price": "923.42342134",
+                "rating": 1,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/kids/3.jpg"
+            },
+            {
+                "id"    : 24,
+                "name" : "Slazenger Men's Tech Solid Golf Polo",
+                "price": "953.45123421",
+                "rating": 2,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/kids/4.jpg"
+            },
+            {
+                "id"    : 25,
+                "name" : "Under Armour Men's Performance 2.0 Golf Polo",
+                "price": "789.413223",
+                "rating": 3,
+                "qty"   : 1,
+                "size"  : ["XS","S","M","L"],
+                "img": "/assets/images/products/kids/5.jpg"
+            }
+        ]
+    }
+]}
