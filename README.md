@@ -14,5 +14,4 @@ An interactive angular 6 based e-shopping cart application based on JSON data (A
 ![alt text](img/myCart.jpg)
 
 ## Demo
-You may want to have a look at the demo https://speedometer.stackblitz.io
-
+You may want to have a look at the demo https://nbwilrrm.github.stackblitz.io
