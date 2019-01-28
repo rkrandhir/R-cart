@@ -1,0 +1,38 @@
+.c-bag-qty{clear:both;display:inline-block}
+.c-bag-qty>li{float:left}
+.c-bag-qty>li.qty-opt {
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.c-bag-qty>li.qty-opt:hover {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.c-bag-qty>li>span {
+    display: block;
+}
+
+.c-bag-qty>li>input, .c-bag-qty>li>span {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center!important;
+}
+
+.iconfont {
+    -webkit-text-stroke-width: .2px;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.c-bag-qty>li>input {
+    margin: 0 3px;
+    border: none;
+    outline: 0;
+    background: 0 0;
+}
