@@ -5,11 +5,14 @@ export class Product{
     public size: any;
     public qty: number;
     public getQty: number;
+    public totalItemPrice: number;
     public totalPrice: number;
     public imagePath: string;
+    public getUpdatedTotalPrice: number;
+
 
 constructor(
-    id: number,name: string,price: number,size: any,qty: number, getQty: number,totalPrice: number,imagePath: string
+    id: number,name: string,getUpdatedTotalPrice:number,price: number,size: any,qty: number, getQty: number,totalItemPrice: number,totalPrice: number,imagePath: string
     )
     {
         this.id = id;
@@ -18,6 +21,8 @@ constructor(
         this.size = size;
         this.qty = qty;
         this.getQty = getQty;
+        this.totalItemPrice = totalItemPrice;
+        this.getUpdatedTotalPrice = getUpdatedTotalPrice;
         this.totalPrice = totalPrice;
         this.imagePath = imagePath;
     }
