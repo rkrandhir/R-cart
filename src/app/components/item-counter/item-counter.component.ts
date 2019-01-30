@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AddtocartService } from '../../services/addtocart.service';
 
 @Component({
   selector: 'app-item-counter',
@@ -6,27 +7,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./item-counter.component.css']
 })
 export class ItemCounterComponent implements OnInit {
-  public qtyOfItem:number=1;
-  @Output() public childEvent = new EventEmitter();
-  constructor() { }
+  @Input() public getCartItem;
+  public qtyOfItem:number=1; 
+  //@Output() public childEvent = new EventEmitter();
+  constructor(private _AddtocartService: AddtocartService) {
+    //this.qtyOfItem = this.getCartItem.qty;
+   }
 
   ngOnInit() {
   }
 
-  addItem(qty){
-    qty++;
-    this.qtyOfItem = qty;
-    this.childEvent.emit(qty);
+  increaseItem(){
+    this._AddtocartService.increaseCartItem(this.getCartItem);
+    this.qtyOfItem = this.getCartItem.qty;
   }
 
-  reduceItem(qty){
-    if(qty == 1 ){
-      return false;
-    } else {
-      qty--;
-      this.qtyOfItem = qty;
-      this.childEvent.emit(qty);
-    }    
+  decreaseItem(){
+    this._AddtocartService.decreaseCartItem(this.getCartItem);
+    this.qtyOfItem = this.getCartItem.qty;
   }
 
 }

@@ -1,55 +1,56 @@
-  <div class="container">
-      <div class="row outerWrapper">
-          <div class="col-xs-12">
-              <h2 class="productTitle"><span>{{ ProductName }}</span></h2>
-              <div class="row">
-                <div class="col-sm-2">
-                    <ul class='categoryFilter'>
-                        <li (click)='getProdTitle("All")'>All</li>
-                        <li (click)='getProdTitle(product.family)' *ngFor='let product of _getProductList.category'>
-                            {{ product.family }}
-                        </li>
-                    </ul>
-                </div>
-                <div ngClass="col-sm-10">
-                    <div>
-                        <ul>
-                            <li *ngFor='let product of _getProductList.category'>
-                                <ul class='productList'>
-                                <li class="col-xs-12 col-md-3 clearfix" *ngFor='let item of product.productItems, let dataId = index'>
-                                    <div class="prodImg"><img [src]="item.img" class="img-responsive" /></div>
-                                    <div class="prodDetails clearfix">
-                                        <a href="javascript:void(0)" class="productTitle">{{item.name | truncate:[25, '...']}}</a>
-                                        <p class="productPrice"> {{item.price |  currency : 'INR' }}</p>
-                                        <div class="BtnAddToCart" (click)="item.selectSizePanelVisible = true">Add to Cart</div>
-                                        
-                                        <div class="selectSizePanel" *ngIf="item.selectSizePanelVisible">
-                                            <div [class.shakeAnimation]="item.anim == true">
-                                                <span class="add-tip">Please select</span>
-                                                <div class="c-opt">
-                                                    <label [for]="dataId + ' ' + sizeId" class='opt-size' *ngFor="let size of item.size, let sizeId = index">
-                                                       <input type="radio" class='opt' [id]="dataId + ' ' + sizeId" [name]="dataId+sizeId" 
-                                                        [(ngModel)]="item.selectedSize" [value]="size"/>
-                                                     <span class="opt-real" (click)="item.anim = false;toggleActive(dataId + ' ' + sizeId)" [class.active]="hightlightStatus[dataId + ' ' + sizeId]" >{{ size }}</span>
-                                                     <!-- <span class="opt-real" (click)="item.anim = false">{{ size }}</span>  -->
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div [ngSwitch]='item.selectedSize'>
-                                                <button *ngSwitchCase="undefined" ngClass="btn-black" (click)="item.anim = true">Select Size</button>
-                                                <button *ngSwitchDefault ngClass="btn-black" (click)="addToCart(item);item.selectSizePanelVisible=false">Submit</button>
-                                            </div>
-                                            <button ngClass="btn-white" (click)="item.selectSizePanelVisible = false;item.anim = false">Cancel</button>
-                                        </div>
-                                    </div>
-                                </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-              </div>
-              <!-- end of filter -->
-        </div>
-      </div>
-  </div>
+<div class="container">
+	<div class="row outerWrapper">
+		<div class="col-xs-12">
+			<h2 class="productTitle"><span>{{ ProductName }}</span></h2>
+			<div class="row">
+				<div class="col-sm-2">
+					<ul class='categoryFilter'>
+						<li (click)='getProdTitle("All")'>All</li>
+						<li (click)='getProdTitle(product.family)' *ngFor='let product of _getProductList.category'>
+							{{ product.family }}
+						</li>
+					</ul>
+				</div>
+				<div ngClass="col-sm-10">
+					<div>
+						<ul>
+							<li *ngFor='let product of _getProductList.category'>
+								<ul class='productList'>
+									<li class="col-xs-12 col-md-3 clearfix" *ngFor='let item of product.productItems, let dataId = index'>
+										<div class="prodImg"><img [src]="item.img" class="img-responsive" /></div>
+										<div class="prodDetails clearfix">
+											<a href="javascript:void(0)" class="productTitle">{{item.name | truncate:[25, '...']}}</a>
+											<p class="productPrice"> {{item.price | currency : 'INR' }}</p>
+											<div class="BtnAddToCart" (click)="item.selectSizePanelVisible = true">Add to Cart</div>
+
+											<div class="selectSizePanel" *ngIf="item.selectSizePanelVisible">
+												<div [class.shakeAnimation]="item.anim == true">
+													<span class="add-tip">Please select</span>
+													<div class="c-opt">
+														<label [for]="dataId + ' ' + sizeId" class='opt-size' *ngFor="let size of item.size, let sizeId = index">
+															<input type="radio" class='opt' [id]="dataId + ' ' + sizeId" [name]="dataId+sizeId" [(ngModel)]="item.selectedSize"
+															 [value]="size" />
+															<span class="opt-real" (click)="item.anim = false;toggleActive(dataId + ' ' + sizeId)" [class.active]="hightlightStatus[dataId + ' ' + sizeId]">{{
+																size }}</span>
+															<!-- <span class="opt-real" (click)="item.anim = false">{{ size }}</span>  -->
+														</label>
+													</div>
+												</div>
+												<div [ngSwitch]='item.selectedSize'>
+													<button *ngSwitchCase="undefined" ngClass="btn-black" (click)="item.anim = true">Select Size</button>
+													<button *ngSwitchDefault ngClass="btn-black" (click)="addToCart(item);item.selectSizePanelVisible=false">Submit</button>
+												</div>
+												<button ngClass="btn-white" (click)="item.selectSizePanelVisible = false;item.anim = false">Cancel</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end of filter -->
+		</div>
+	</div>
+</div>

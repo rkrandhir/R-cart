@@ -31,19 +31,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   toggleMiniCart(){
-    this.calcTotalPrice();
+    //this.calcTotalPrice();
     this.showMiniCart = !this.showMiniCart;
   }
 
   calcTotalPrice(){
-    this.totalPrice = 0;
-    for (let i=0; i < this.cartItemList.length; i++) {      
+    this.totalPrice = this._AddtocartService.totalPrice;
+    /* for (let i=0; i < this.cartItemList.length; i++) {      
       if((this.cartItemList[i].getQty) == NaN || (this.cartItemList[i].getQty) == undefined){ // in case of single quantity product
         this.totalPrice += (this.cartItemList[i].price) * (this.cartItemList[i].qty);
       } else {
         this.totalPrice += (this.cartItemList[i].price) * (this.cartItemList[i].getQty); //multiply with updated qty
       }
-    }
+    } */
   }
 
   removeCartItem(item){
@@ -55,15 +55,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.showMiniCart = false;
   }
 
-  updatePrice(cartItem){
-    cartItem.totalItemPrice = cartItem.price * cartItem.getQty;
-    /* let x;
-    this.totalItemPrice = 0;
-    for (let i=0; i < this.cartItemList.length; i++) {
-      this.cartItemList[i].totalItemPrice = (Math.round(this.cartItemList[i].price) * Math.round(this.cartItemList[i].getQty));
-      this.totalPrice += this.cartItemList[i].totalItemPrice;
-    } */
-   this.calcTotalPrice();
+  updatePrice(cartItem){ // to show individual item price
+    cartItem.totalItemPrice = cartItem.price * cartItem.qty;
+    this.calcTotalPrice();
   }
 
   /* updateCartItem(){

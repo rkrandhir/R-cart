@@ -1,71 +1,65 @@
 <header>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-          <div class="logoWrap">
-              <a href="#"><img src="/assets/images/logo.png" /></a>
-          </div>
-          <div class="pull-right">
-            <div class="btn clearfix" routerLink="/products" (click)='hideMiniCart()'>Products</div>
-            <div class="btn clearfix" (click)='toggleMiniCart()'>My Cart <span *ngIf='cartItemList.length > 0'>({{ cartItemList.length }})</span></div>
-            <!-- <div class="btn clearfix">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="logoWrap">
+				<a href="#"><img src="/assets/images/logo.png" /></a>
+			</div>
+			<div class="pull-right">
+				<div class="btn clearfix" routerLink="/products" (click)='hideMiniCart()'>Products</div>
+				<div class="btn clearfix" (click)='toggleMiniCart()'>My Cart <span *ngIf='cartItemList.length > 0'>({{
+						cartItemList.length }})</span></div>
+				<!-- <div class="btn clearfix">
                 <i (click)='toggleMiniCart()'><img src="/assets/images/miniCartbag.png" alt=""></i>
             </div> -->
-          </div>
-          <!-- <div class="btn pull-right clearfix" (click)='toggleMiniCart()'>
-            <i class="fas fa-shopping-cart"></i>My Cart
-						<span *ngIf='cartItemList.length > 0'>({{ cartItemList.length }})</span>
+			</div>
+		</div>
+	</nav>
+	<div id="myMiniCart" *ngIf='showMiniCart'>
+		<div *ngIf='cartItemList.length > 0; else emptyCart'>
+			<div class="miniCart">
+				<div class='clearfix miniCartItemWrap'>
+					<div class='clearfix miniCartItem' *ngFor="let cartItem of cartItemList">
+						<div class="col-sm-4 bag-left"><img [src]="cartItem.img" /></div>
+						<div class="col-sm-8">
+							<div class='miniCartPriceCont clearfix'>
+								<div class='miniCartPrice pull-left'>
+									{{cartItem.price | currency : 'INR'}}
+								</div>
+								<div class='pull-right'>
+									<a class="iconDelete" (click)="removeCartItem(cartItem)">Delete Item</a>
+								</div>
+							</div>
+							<p>{{cartItem.name | truncate:[25, '...']}}</p>
+							<div class='miniCartPriceCont clearfix'>
+								<div class='pull-left'>
+									<app-item-counter [getCartItem]='cartItem'>
+									</app-item-counter> 
+								<!-- 	<app-item-counter [getCartItem]='cartItem' (childEvent)='cartItem.qty=$event' (click)='updatePrice(cartItem)'>
+									</app-item-counter> -->
+								</div>
+								<div class='pull-right'>size: {{ cartItem.selectedSize }}</div>
+							</div>
+							<div class='miniCartPriceCont clearfix'>
+								<div class='pull-left'>Total:</div>
+								<div class='pull-right'>
+									<span>{{cartItem.totalItemPrice | currency : 'INR'}}</span>									
+								</div>
+							</div>
+						</div>
 					</div>
-					
-					<div class="btn pull-right clearfix" routerLink="/cart">My Shopping Cart</div> -->
-      </div>
-  </nav>
-  <div id="myMiniCart" *ngIf='showMiniCart'>
-    <div *ngIf='cartItemList.length > 0; else emptyCart'>
-        <div class="miniCart">
-            <div class='clearfix miniCartItemWrap'>
-                <div class='clearfix miniCartItem' *ngFor="let cartItem of cartItemList">
-                    <div class="col-sm-4 bag-left"><img [src]="cartItem.img" /></div>
-                    <div class="col-sm-8">
-                        <div class='miniCartPriceCont clearfix'>
-                            <div class='miniCartPrice pull-left'>
-                                {{cartItem.price | currency : 'INR'}}
-                            </div>
-                            <div class='pull-right'>
-                                <a class="iconDelete" (click)="removeCartItem(cartItem)">Delete Item</a>
-                            </div>
-                        </div>
-                        <p>{{cartItem.name | truncate:[25, '...']}}</p>
-                        <div class='miniCartPriceCont clearfix'>
-                            <div class='pull-left'>
-                               	<app-item-counter (childEvent)='cartItem.getQty=$event' (click)='updatePrice(cartItem)'>
-                                </app-item-counter>
-                            </div>
-                            <div class='pull-right'>size: {{ cartItem.selectedSize }}</div>
-                        </div>
-                        <div class='miniCartPriceCont clearfix'>
-                            <div class='pull-left'>Total:</div>
-                            <div class='pull-right'>
-                                <span *ngIf="cartItem.getQty == 1 || cartItem.getQty === NaN; else moreThanOneTotal">{{ cartItem.price | currency : 'INR' }}</span> 
-                                <ng-template #moreThanOneTotal>
-                                    <span>{{cartItem.totalItemPrice | currency : 'INR'}}</span>
-                                </ng-template>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="miniCartTotalWrap clearfix">
-                <div class="totalPrice">Total: <span>{{totalPrice | currency : 'INR'}}</span></div>
-                <div class="btnViewCart" routerLink="/cart" (click)='hideMiniCart()'>VIEW BAG</div>
-            </div>
-        </div>
-    </div>
-    <ng-template #emptyCart>
-        <div ng-switch-when='false' class="emptyMiniCart">
-            <img src="/assets/images/shoppingcart-empty.png"/>
-            <p class="emptyMsg">Shopping Cart is Emply!<br/>Please select the best offer for you and your family members.</p>
-            <p></p>
-        </div>
-    </ng-template>
-</div>
+				</div>
+				<div class="miniCartTotalWrap clearfix">
+					<div class="totalPrice">Total: <span>{{totalPrice | currency : 'INR'}}</span></div>
+					<div class="btnViewCart" routerLink="/cart" (click)='hideMiniCart()'>VIEW BAG</div>
+				</div>
+			</div>
+		</div>
+		<ng-template #emptyCart>
+			<div ng-switch-when='false' class="emptyMiniCart">
+				<img src="/assets/images/shoppingcart-empty.png" />
+				<p class="emptyMsg">Shopping Cart is Emply!<br />Please select the best offer for you and your family members.</p>
+				<p></p>
+			</div>
+		</ng-template>
+	</div>
 </header>
