@@ -12,6 +12,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { TruncatePipe } from './shared/truncate.pipe';
 import { ItemCounterComponent } from './components/item-counter/item-counter.component';
 import { CartComponent } from './components/cart/cart.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 const routes: Routes = [
   {path:'', component:ProductListComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
     ProductListComponent,
     TruncatePipe,
     ItemCounterComponent,
-    CartComponent
+    CartComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,
