@@ -20,6 +20,11 @@ export class AddtocartService {
 		this.getUpdatedTotalPrice.next(this.totalPrice)
 	}
 
+	getCartItemList4delete(){
+		this.getTotalPrice();
+		console.log(this.totalPrice);
+	}
+
 	getCartItem() {
 		return this.cartItemList.slice();
 	}
@@ -29,9 +34,10 @@ export class AddtocartService {
 		this.cartItemList.push(item);
 		this.cartItemListChanged.next(this.cartItemList.slice());
 		item.totalItemPrice =  item.qty * item.price; //get the total price of item
+		this.getTotalPrice();
 		console.log('this.cartItemList');
 		console.log(this.cartItemList);
-		this.getTotalPrice();
+		
 		
 	}
 
@@ -42,6 +48,7 @@ export class AddtocartService {
 			this.cartItemList.splice(index, 1);
 		}
 		this.cartItemListChanged.next(this.cartItemList.slice());
+		this.getTotalPrice();
 	}
 
 	/**  Increase cart item **/
@@ -49,6 +56,7 @@ export class AddtocartService {
 		item.qty = item.qty + 1;
 		item.totalItemPrice = item.qty * item.price;
 		console.log(item);
+		this.getTotalPrice();
 	}
 	/**  Decrease cart item **/
 	decreaseCartItem(item) {
@@ -59,5 +67,6 @@ export class AddtocartService {
 			item.totalItemPrice = item.qty * item.price;
 		}
 		console.log(item);
+		this.getTotalPrice();
 	}
 }

@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 export class CartComponent implements OnInit, OnDestroy {
   private shoppingItem: Product[];
   private subscription: Subscription;
+  public totalPrice: number = 0;
+  private subscription1: Subscription;
   
   constructor(private _AddtocartService: AddtocartService) {
   }
@@ -18,7 +20,11 @@ export class CartComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.shoppingItem = this._AddtocartService.getCartItem();  
     this.subscription = this._AddtocartService.cartItemListChanged.subscribe(
-      (data:Product[]) => {this.shoppingItem = data});  
+      (data:Product[]) => {this.shoppingItem = data}
+    );
+    this.subscription1 = this._AddtocartService.getUpdatedTotalPrice.subscribe( //get the overall Price
+      (data: number) => { this.totalPrice = data }
+    );
   }
 
   ngOnDestroy(){

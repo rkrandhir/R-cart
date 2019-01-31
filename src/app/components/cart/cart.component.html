@@ -1,34 +1,42 @@
 <div class="row">
-
-</div>
-<h1>My Cart <span *ngIf="shoppingItem.length >0">({{ shoppingItem.length }})</span></h1>
-<div *ngIf="shoppingItem.length >0; else emptyCart">
-	<table class="table table-striped">
-		<tr>
-			<th>Sr. No.</th>
-			<th>Image</th>
-			<th>Name</th>
-			<th>Quantity</th>
-			<th>Price</th>
-			<th>Remove</th>
-		</tr>
-		<tr *ngFor='let item of shoppingItem;let i = index'>
-			<td>{{ i+1 }}</td>
-			<td><img [src]="item.img" class="img-responsive" width='30px' /></td>
-			<td>{{ item.name | truncate:[25, '...']}}</td>
-			<td>
-				<app-item-counter [getCartItem]='item'>
-				</app-item-counter>
-			</td>
-			<td>{{ item.totalItemPrice | currency : 'INR' }}</td>
-			<td><a class="iconDelete" (click)="removeCartItem(item)">Delete Item</a></td>
-		</tr>
-	</table>
-	<div class="pull-right">
-		<div class="btn clearfix" routerLink="/products">Continue Shopping</div>
-		<div class="btn clearfix">Place Order</div>
+	<div class="col-xs-12">
+		<h1>My Cart <span *ngIf="shoppingItem.length >0">({{ shoppingItem.length }})</span></h1>
 	</div>
 </div>
+<div class="row" *ngIf="shoppingItem.length >0; else emptyCart">
+	<div class="col-xs-12 col-sm-9">
+		<table class="table table-striped">
+			<tr>
+				<th></th>
+				<th>Item</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Total</th>
+				<th>Remove</th>
+			</tr>
+			<tr *ngFor='let item of shoppingItem;let i = index'>
+				<td><img [src]="item.img" class="img-responsive" width='30px' /></td>
+				<td>{{ item.name | truncate:[25, '...']}}</td>
+				<td>{{ item.price | currency : 'INR' }}</td>
+				<td>
+					<app-item-counter [getCartItem]='item'>
+					</app-item-counter>
+				</td>
+				<td>{{ item.totalItemPrice | currency : 'INR' }}</td>
+				<td><a class="iconDelete" (click)="removeCartItem(item)">Delete Item</a></td>
+			</tr>
+		</table>
+		<div class="pull-right">
+			<div class="btn clearfix" routerLink="/products">Continue Shopping</div>
+			<div class="btn clearfix">Place Order</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-3">
+		<app-order-summary></app-order-summary>
+	</div>
+</div>
+
+
 <ng-template #emptyCart>
 	<div ng-switch-when='false' class="emptyMiniCart">
 		<img src="/assets/images/shoppingcart-empty.png" />
