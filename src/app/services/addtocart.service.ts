@@ -37,8 +37,6 @@ export class AddtocartService {
 		this.getTotalPrice();
 		console.log('this.cartItemList');
 		console.log(this.cartItemList);
-		
-		
 	}
 
 	/** Remove cart Item **/
