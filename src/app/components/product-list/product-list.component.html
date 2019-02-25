@@ -19,10 +19,11 @@
 									<li class="col-xs-12 col-md-3 clearfix" *ngFor='let item of product.productItems, let dataId = index'>
 										<div class="prodImg"><img [src]="item.img" class="img-responsive" /></div>
 										<div class="prodDetails clearfix">
-											<a href="javascript:void(0)" class="productTitle">{{item.name | truncate:[25, '...']}}</a>
+											<a routerLink="/product/{{ item.id }}" href="javascript:void(0)" class="productTitle">{{item.name | truncate:[25, '...']}}</a>
+											<!-- <a [routerLink]="['/product', item.id]" href="javascript:void(0)" class="productTitle">{{item.name | truncate:[25, '...']}}</a> -->
+											<a href="javascript:void(0)" (click)='getProductItem(item.id)'>More ></a>
 											<p class="productPrice"> {{item.price | currency : 'INR' }}</p>
 											<div class="BtnAddToCart" (click)="item.selectSizePanelVisible = true">Add to Cart</div>
-
 											<div class="selectSizePanel" *ngIf="item.selectSizePanelVisible">
 												<div [class.shakeAnimation]="item.anim == true">
 													<span class="add-tip">Please select</span>
@@ -43,6 +44,7 @@
 												<button ngClass="btn-white" (click)="item.selectSizePanelVisible = false;item.anim = false">Cancel</button>
 											</div>
 										</div>
+										<app-rating [item]=item></app-rating>
 									</li>
 								</ul>
 							</li>

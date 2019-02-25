@@ -30,13 +30,7 @@ ul.productList li .prodImg img{max-width: 100%;max-height: 100%;margin: auto;bor
 ul.productList li a.productTitle{font-weight:bold;font-size:14px;display:block;color:#525252;padding-bottom: 5px}
 ul.productList li .productPrice{color:#212121;float:left}
 
-.starRating{float:right;background:url("../../../assets/images/star-ratings-sprite.png") 0 0 no-repeat;width: 100px;height: 15px;background-size: 80px;}
-.starRating.rating0{background-position:0 0}
-.starRating.rating1{background-position:0 -15px}
-.starRating.rating2{background-position:0 -30px}
-.starRating.rating3{background-position:0 -44px}
-.starRating.rating4{background-position:0 -59px}
-.starRating.rating5{background-position:0 -75px}
+
 
 ul.productList li:hover .BtnAddToCart{display:block}
 .BtnAddToCart{animation-duration:10s;position:absolute;display:none;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);background-color:rgba(0, 0, 0, 0.2);color:#fff;cursor:pointer;border:1px solid #fff;padding:5px 15px;text-transform: uppercase}

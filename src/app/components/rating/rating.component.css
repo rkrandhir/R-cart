@@ -1,0 +1,7 @@
+.starRating{float:right;background:url("../../../assets/images/star-ratings-sprite.png") 0 0 no-repeat;width: 100px;height: 15px;background-size: 80px;}
+.starRating.rating0{background-position:0 0}
+.starRating.rating1{background-position:0 -15px}
+.starRating.rating2{background-position:0 -30px}
+.starRating.rating3{background-position:0 -44px}
+.starRating.rating4{background-position:0 -59px}
+.starRating.rating5{background-position:0 -75px}

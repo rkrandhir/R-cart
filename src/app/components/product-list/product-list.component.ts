@@ -46,8 +46,12 @@ export class ProductListComponent implements OnInit, OnDestroy {
       this.ProductName = 'Our Apparels for your family'
     } else{
       this.ProductName = item
-    }
-    
+    }    
+  }
+
+  getProductItem(id) {
+    console.log('$$$$$$$$$$$$$$$$$$$$$$$44'+ id)
+    this._getDataService.getProduct(id);
   }
 
 
