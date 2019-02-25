@@ -13,11 +13,21 @@ import { TruncatePipe } from './shared/truncate.pipe';
 import { ItemCounterComponent } from './components/item-counter/item-counter.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { ProductComponent } from './components/product/product.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { productResolverService } from './services/product-resolver.service';
 
 const routes: Routes = [
   {path:'', component:ProductListComponent},
   {path:'products', component:ProductListComponent},
-  {path:'cart', component:CartComponent}
+  {path:'cart', component:CartComponent},
+  {
+    path:'product/:id', 
+    component:ProductComponent,
+    resolve: {
+      productItem: productResolverService
+    }
+  }
 ];
 
 @NgModule({
@@ -28,7 +38,9 @@ const routes: Routes = [
     TruncatePipe,
     ItemCounterComponent,
     CartComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    ProductComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [GetdataService],
+  providers: [GetdataService, productResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
